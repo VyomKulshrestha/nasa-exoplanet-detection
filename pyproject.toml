@@ -1,0 +1,113 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nasa-exoplanet-detection"
+version = "1.0.0"
+description = "AI/ML system for automatically detecting exoplanets from NASA space-based survey data"
+readme = "README.md"
+authors = [
+    {name = "NASA Exoplanet AI Team"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research", 
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.21.0",
+    "pandas>=1.5.0",
+    "matplotlib>=3.6.0",
+    "seaborn>=0.12.0",
+    "scipy>=1.9.0",
+    "lightkurve>=2.4.0",
+    "astropy>=5.0.0",
+    "astroquery>=0.4.6",
+    "scikit-learn>=1.2.0",
+    "tensorflow>=2.13.0",
+    "keras>=2.13.0",
+    "xgboost>=1.7.0",
+    "plotly>=5.15.0",
+    "ipywidgets>=8.0.0",
+    "jupyter>=1.0.0",
+    "tqdm>=4.64.0",
+    "joblib>=1.2.0",
+    "h5py>=3.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "pylint>=2.15.0",
+    "mypy>=0.991",
+]
+
+[project.scripts]
+exoplanet-detect = "main:main"
+
+[tool.pylint.main]
+source-roots = ["src", "."]
+init-hook = "import sys; sys.path.append('src')"
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring", 
+    "missing-function-docstring",
+    "too-few-public-methods",
+    "too-many-arguments",
+    "too-many-locals",
+    "too-many-branches",
+    "too-many-statements",
+    "import-error",
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = [
+    "lightkurve.*",
+    "astropy.*", 
+    "astroquery.*",
+    "tensorflow.*",
+    "keras.*",
+    "xgboost.*",
+    "sklearn.*",
+    "joblib.*",
+    "tqdm.*",
+]
+ignore_missing_imports = true
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+

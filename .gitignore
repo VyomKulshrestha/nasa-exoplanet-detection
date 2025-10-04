@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data (too large for git, will be downloaded on first run)
+data/raw/*.pkl
+data/processed/*.npy
+data/confirmed_planets.csv
+data/kepler_kois.csv
+
+# Models (too large for git, will be trained on first run)
+models/*.h5
+models/*.pkl
+models/*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Streamlit secrets (keep config.toml)
+.streamlit/secrets.toml
+
+# Deployment
+.vercel
+.netlify
+
