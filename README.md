@@ -7,7 +7,7 @@
 
 An artificial intelligence and machine learning web application for automatically identifying exoplanets from NASA's space-based survey mission data. Built for the NASA Space Apps Challenge 2024.
 
-🌐 **Live Demo:** [exoplanet.design](https://exoplanet.design)
+🌐 **Live Demo:** [exoplanet-detection](https://nasa-exoplanet-detection.streamlit.app/))
 
 ![Screenshot](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python)
